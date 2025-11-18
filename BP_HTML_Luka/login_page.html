@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inloggen – Lost in Tra(i)nslation</title>
+    <link href="../dist/output.css" rel="stylesheet">
+</head>
+<body class="min-h-screen bg-cover bg-center" style="background-image: url('assets/achtergrond.jpg');">
+
+    <div class="bg-black/50 backdrop-blur-sm min-h-screen flex items-center justify-center">
+
+        <div class="bg-white p-8 rounded-xl shadow-2xl w-full max-w-sm">
+            <h3 class="text-3xl font-bold mb-6 text-center text-gray-800">Inloggen</h3>
+
+            <div id="login-message" class="hidden p-3 mb-4 text-center rounded-lg text-white font-bold" role="alert"></div>
+            
+            <form onsubmit="handleLogin(event)" class="space-y-5">
+                
+                <div>
+                    <label for="gebruikersnaam" class="block text-sm font-medium text-gray-700 mb-1">Gebruikersnaam</label>
+                    <input type="text" id="gebruikersnaam" name="gebruikersnaam" required class="w-full rounded-lg border-gray-300 shadow-sm p-3 border focus:border-blue-500 focus:ring-blue-500">
+                </div>
+                
+                <div>
+                    <label for="wachtwoord" class="block text-sm font-medium text-gray-700 mb-1">Wachtwoord</label>
+                    <input type="password" id="wachtwoord" name="wachtwoord" required class="w-full rounded-lg border-gray-300 shadow-sm p-3 border focus:border-blue-500 focus:ring-blue-500">
+                </div>
+                
+                <button type="submit" class="
+                    w-full bg-blue-600 hover:bg-blue-700 text-white font-bold 
+                    py-3 px-4 rounded-lg shadow-md transition duration-200
+                ">
+                    Inloggen
+                </button>
+            </form>
+
+            <div class="mt-4 text-center">
+                <p class="text-sm text-gray-700">Nog geen account? <a href="register_page.html" class="font-medium text-blue-600 hover:text-blue-700">Maak een account aan</a></p>
+            </div>
+            
+            <div class="mt-6 text-center">
+                <a href="index.html" class="text-sm text-gray-600 hover:text-blue-600 transition duration-200 font-medium">
+                    &larr; Terug naar de hoofdpagina
+                </a>
+            </div>
+            
+        </div>
+        
+    </div>
+
+    <script>
+        /**
+         * Simuleert een succesvolle login met een visuele bevestiging
+         * en stuurt de gebruiker daarna terug naar de indexpagina.
+         */
+        function handleLogin(event) {
+            // Voorkom dat het formulier daadwerkelijk wordt ingediend en de pagina herlaadt
+            event.preventDefault(); 
+            
+            const messageBox = document.getElementById('login-message');
+            
+            // Verberg de formulier-elementen om de aandacht op de melding te vestigen
+            event.target.style.display = 'none';
+
+            // Toon de succesmelding
+            messageBox.classList.remove('hidden');
+            messageBox.classList.add('bg-green-500');
+            messageBox.innerHTML = '✅ Succesvol ingelogd! Je wordt binnen 2 seconden doorgestuurd...';
+            
+            // Vertraagde redirect naar de hoofdpagina
+            setTimeout(() => {
+                window.location.href = 'index.html'; 
+            }, 2000); // 2000 milliseconden = 2 seconden
+        }
+    </script>
+</body>
+</html>

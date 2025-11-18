@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invulformulier</title>
+    <link href="../dist/output.css" rel="stylesheet"> 
+</head>
+<body class="bg-gray-50 min-h-screen flex items-center justify-center p-4">
+
+    <div class="bg-white p-8 rounded-xl shadow-2xl w-full max-w-2xl">
+        
+        <h2 class="text-3xl font-bold mb-6 text-gray-800 text-center">
+            Voeg Notitie Toe
+        </h2>
+        
+        <form onsubmit="handleSubmit(event)" class="space-y-6">
+            
+            <div>
+                <label for="notitie_titel" class="block text-sm font-medium text-gray-700 mb-1">Titel van de Notitie</label>
+                <input type="text" id="notitie_titel" name="notitie_titel" required 
+                       placeholder="Bijv. Opmerkingen"
+                       class="w-full rounded-lg border-gray-300 shadow-sm p-3 border focus:border-blue-500 focus:ring-blue-500">
+            </div>
+            
+            <div>
+                <label for="vrije_tekst" class="block text-sm font-medium text-gray-700 mb-1">Jouw Tekst / Notitie</label>
+                <textarea id="vrije_tekst" name="vrije_tekst" rows="8" required 
+                          placeholder="Typ hier je reflectie, notities, of losse gedachten..."
+                          class="w-full rounded-lg border-gray-300 shadow-sm p-3 border focus:border-blue-500 focus:ring-blue-500 resize-y"></textarea>
+            </div>
+            
+            <button type="submit" class="
+                w-full bg-blue-600 hover:bg-blue-700 text-white font-bold 
+                py-3 px-4 rounded-lg shadow-md transition duration-200
+            ">
+                Notitie Opslaan
+            </button>
+        </form>
+
+        <div id="success-message" class="hidden mt-6 p-4 text-center rounded-lg bg-green-100 border border-green-400 text-green-700">
+            ✅ Notitie succesvol verwerkt!
+        </div>
+
+        <div class="mt-6 text-center">
+            <a href="index.html" class="text-sm text-gray-600 hover:text-blue-600 transition duration-200 font-medium">
+                &larr; Terug naar de hoofdpagina
+            </a>
+        </div>
+        
+    </div>
+    
+    <script>
+        function handleSubmit(event) {
+            // Voorkom dat het formulier de pagina herlaadt (simulatie)
+            event.preventDefault(); 
+            
+            // Toon het succesbericht
+            document.getElementById('success-message').classList.remove('hidden');
+            
+            // Optioneel: Formulier uitschakelen na succes
+            document.querySelector('form').style.opacity = 0.5;
+            document.querySelector('button[type="submit"]').disabled = true;
+            
+            // Scroll naar de top van de container om het bericht te tonen
+            document.querySelector('.bg-white').scrollTop = 0;
+        }
+    </script>
+</body>
+</html>

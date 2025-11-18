@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week 4 – Mid-Fi, Github & Netlify</title>
+    <link href="../dist/output.css" rel="stylesheet">
+</head>
+<body class="bg-indigo-50 min-h-screen">
+    
+    <header class="bg-white shadow-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+            <h1 class="text-2xl font-bold text-gray-900">
+                Lost in Tra(i)nslation
+            </h1>
+            
+            <div class="relative inline-block text-left" x-data="{ open: false }">
+                <button @click="open = !open" type="button" class="
+                    inline-flex justify-center w-full rounded-md border border-gray-300
+                    shadow-sm px-4 py-2 bg-white text-sm font-medium text-gray-700
+                    hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2
+                    focus:ring-indigo-500 focus:ring-offset-gray-100
+                " id="menu-button" aria-expanded="true" aria-haspopup="true">
+                    Weken Overzicht
+                    <svg class="-mr-1 ml-2 h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                        <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                    </svg>
+                </button>
+
+                <div x-show="open" 
+                     @click.away="open = false"
+                     x-transition:enter="transition ease-out duration-100" 
+                     x-transition:enter-start="transform opacity-0 scale-95" 
+                     x-transition:enter-end="transform opacity-100 scale-100" 
+                     x-transition:leave="transition ease-in duration-75" 
+                     x-transition:leave-start="transform opacity-100 scale-100" 
+                     x-transition:leave-end="transform opacity-0 scale-95" 
+                     class="origin-top-right absolute right-0 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none z-10" role="menu" aria-orientation="vertical" aria-labelledby="menu-button" tabindex="-1">
+                    <div class="py-1" role="none">
+                        <a href="week_1.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem" tabindex="-1">Week 1</a>
+                        <a href="week_2.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem" tabindex="-1">Week 2</a>
+                        <a href="week_3.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem" tabindex="-1">Week 3</a>
+                        <a href="week_4.html" class="block px-4 py-2 text-sm text-indigo-600 font-bold bg-indigo-50" role="menuitem" tabindex="-1">Week 4 (Huidig)</a>
+                        <a href="week_5.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem" tabindex="-1">Week 5</a>
+                        <a href="week_6.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem" tabindex="-1">Week 6</a>
+                        <a href="index.html" class="block px-4 py-2 text-sm text-blue-600 border-t mt-1 hover:bg-gray-100" role="menuitem" tabindex="-1">Naar Hoofdpagina</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        
+        <h2 class="text-4xl font-extrabold text-gray-900 mb-6 border-b pb-2">
+            💻 Week 4: Mid-Fi Finalisatie en Deployment Tools
+        </h2>
+
+        <section class="bg-white p-6 rounded-lg shadow mb-8">
+            <h3 class="text-2xl font-semibold text-gray-800 mb-4 border-b pb-1">
+                Figma Mid-Fidelity Verfijning
+            </h3>
+            <div class="space-y-4 text-gray-700 leading-relaxed">
+                <p>
+                    Deze week werd besteed aan de Mid-Fidelity fase in Figma. Dit hield in dat alle schermen werden voltooid, de componentenbibliotheek werd gestabiliseerd en de interacties (prototyping) werden toegevoegd. Het mid-fi prototype dient nu als de blauwdruk voor de definitieve High-Fidelity versie.
+                </p>
+            </div>
+        </section>
+
+        <section class="bg-white p-6 rounded-lg shadow">
+            <h3 class="text-2xl font-semibold text-gray-800 mb-4 border-b pb-1">
+                Introductie tot Git, Github en Netlify
+            </h3>
+            <p class="text-gray-700 leading-relaxed">
+                We kregen uitleg over twee cruciale tools voor de moderne ontwikkelaar:
+            </p>
+            <ul class="list-disc list-inside space-y-2 text-gray-700 mt-4">
+                <li>**Github:** Uitleg over versiebeheer met Git en hoe we onze code kunnen opslaan, delen en samenwerken via Github repositories.</li>
+                <li>**Netlify:** Demonstratie van hoe we een live website kunnen maken via Continuous Deployment, door onze Github repository te koppelen aan Netlify.</li>
+            </ul>
+        </section>
+
+    </main>
+
+    <footer class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 text-center">
+        <a href="index.html" class="text-sm text-blue-600 hover:text-blue-800 transition duration-200 font-medium">
+            &larr; Terug naar het Overzicht
+        </a>
+    </footer>
+
+</body>
+<script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+</html>
