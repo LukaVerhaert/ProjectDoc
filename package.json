@@ -4,7 +4,8 @@
   "description": "Documentatie voor mijn 6-weken project.",
   "main": "index.js",
   "scripts": {
-    "build": "npx tailwindcss -i ./src/input.css -o ./dist/output.css --watch",
+    "build": "tailwindcss -i ./src/input.css -o ./BP_HTML_Luka/css/output.css",
+    "watch": "tailwindcss -i ./src/input.css -o ./BP_HTML_Luka/css/output.css --watch",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
