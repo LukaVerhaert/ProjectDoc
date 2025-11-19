@@ -35,7 +35,7 @@
                 </button>
             </form>
 
-            <div class="mt-4 text-center">
+            <div id="register-block" class="mt-4 text-center">
                 <p class="text-sm text-gray-700">Nog geen account? <a href="register_page.html" class="font-medium text-blue-600 hover:text-blue-700">Maak een account aan</a></p>
             </div>
             
@@ -59,9 +59,15 @@
             event.preventDefault(); 
             
             const messageBox = document.getElementById('login-message');
+            const registerBlock = document.getElementById('register-block');
             
             // Verberg de formulier-elementen om de aandacht op de melding te vestigen
             event.target.style.display = 'none';
+
+            // NIEUW: Verberg ook de link om een account aan te maken
+            if (registerBlock) {
+                registerBlock.style.display = 'none';
+            }
 
             // Toon de succesmelding
             messageBox.classList.remove('hidden');
