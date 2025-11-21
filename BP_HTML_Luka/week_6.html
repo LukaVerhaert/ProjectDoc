@@ -3,94 +3,137 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Week 6 – Tailwind Intro & Tips</title>
+    <title>Week 6 – Tailwind & De Ommekeer</title>
     <link href="./css/output.css" rel="stylesheet">
 </head>
-<body class="bg-indigo-50 min-h-screen">
+<body class="min-h-screen bg-cover bg-center bg-indigo-50" style="background-image: url('assets/achtergrond.jpg');">
     
-    <header class="bg-white shadow-md">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
-            <h1 class="text-2xl font-bold text-gray-900">
-                Lost in Tra(i)nslation
-            </h1>
-            
-            <div class="relative inline-block text-left" x-data="{ open: false }">
-                <button @click="open = !open" type="button" class="
-                    inline-flex justify-center w-full rounded-md border border-gray-300
-                    shadow-sm px-4 py-2 bg-white text-sm font-medium text-gray-700
-                    hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2
-                    focus:ring-indigo-500 focus:ring-offset-gray-100
-                " id="menu-button" aria-expanded="true" aria-haspopup="true">
-                    Weken Overzicht
-                    <svg class="-mr-1 ml-2 h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                        <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
-                    </svg>
-                </button>
+    <div class="bg-indigo-30/70 backdrop-blur-sm min-h-screen">
+        
+        <header class="bg-white shadow-md">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+                <h1 class="text-2xl font-bold text-gray-900">
+                    Lost in Tra(i)nslation
+                </h1>
+                
+                <div class="relative inline-block text-left" x-data="{ open: false }">
+                    <button @click="open = !open" type="button" class="
+                        inline-flex justify-center w-full rounded-md border border-gray-300 
+                        shadow-sm px-4 py-2 bg-white text-sm font-medium text-gray-700 
+                        hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 
+                        focus:ring-indigo-500 focus:ring-offset-gray-100
+                    " id="menu-button" aria-expanded="true" aria-haspopup="true">
+                        Weken Overzicht
+                        <svg class="-mr-1 ml-2 h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                            <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                        </svg>
+                    </button>
 
-                <div x-show="open" 
-                     @click.away="open = false"
-                     x-transition:enter="transition ease-out duration-100" 
-                     x-transition:enter-start="transform opacity-0 scale-95" 
-                     x-transition:enter-end="transform opacity-100 scale-100" 
-                     x-transition:leave="transition ease-in duration-75" 
-                     x-transition:leave-start="transform opacity-100 scale-100" 
-                     x-transition:leave-end="transform opacity-0 scale-95" 
-                     class="origin-top-right absolute right-0 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none z-10" role="menu" aria-orientation="vertical" aria-labelledby="menu-button" tabindex="-1">
-                    <div class="py-1" role="none">
-                        <a href="week_1.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem" tabindex="-1">Week 1</a>
-                        <a href="week_2.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem" tabindex="-1">Week 2</a>
-                        <a href="week_3.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem" tabindex="-1">Week 3</a>
-                        <a href="week_4.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem" tabindex="-1">Week 4</a>
-                        <a href="week_5.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem" tabindex="-1">Week 5</a>
-                        <a href="week_6.html" class="block px-4 py-2 text-sm text-indigo-600 font-bold bg-indigo-50" role="menuitem" tabindex="-1">Week 6 (Huidig)</a>
-                        <a href="index.html" class="block px-4 py-2 text-sm text-blue-600 border-t mt-1 hover:bg-gray-100" role="menuitem" tabindex="-1">Naar Hoofdpagina</a>
+                    <div x-show="open" 
+                         @click.away="open = false"
+                         x-transition:enter="transition ease-out duration-100" 
+                         x-transition:enter-start="transform opacity-0 scale-95" 
+                         x-transition:enter-end="transform opacity-100 scale-100" 
+                         x-transition:leave="transition ease-in duration-75" 
+                         x-transition:leave-start="transform opacity-100 scale-100" 
+                         x-transition:leave-end="transform opacity-0 scale-95" 
+                         class="origin-top-right absolute right-0 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none z-10" role="menu" aria-orientation="vertical" aria-labelledby="menu-button" tabindex="-1">
+                        <div class="py-1" role="none">
+                            <a href="week_1.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem" tabindex="-1">Week 1</a>
+                            <a href="week_2.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem" tabindex="-1">Week 2</a>
+                            <a href="week_3.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem" tabindex="-1">Week 3</a>
+                            <a href="week_4.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem" tabindex="-1">Week 4</a>
+                            <a href="week_5.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem" tabindex="-1">Week 5</a>
+                            
+                            <a href="week_6.html" class="block px-4 py-2 text-sm text-indigo-600 font-bold bg-indigo-50" role="menuitem" tabindex="-1">Week 6 (Huidig)</a>
+                            
+                            <a href="index.html" class="block px-4 py-2 text-sm text-blue-600 border-t mt-1 hover:bg-gray-100" role="menuitem" tabindex="-1">Naar Hoofdpagina</a>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </header>
+        </header>
 
-    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        
-        <h2 class="text-4xl font-extrabold text-gray-900 mb-6 border-b pb-2">
-            🛠️ Week 6: Tailwind Introductie en Laatste Tips
-        </h2>
-
-        <section class="bg-white p-6 rounded-lg shadow mb-8">
-            <h3 class="text-2xl font-semibold text-gray-800 mb-4 border-b pb-1">
-                De Kracht van Tailwind CSS
-            </h3>
-            <div class="space-y-4 text-gray-700 leading-relaxed">
-                <p>
-                    De laatste week werd de focus gelegd op de definitieve styling, met een diepere introductie in **Tailwind CSS**. We leerden hoe we complexe, responsive designs snel kunnen realiseren door gebruik te maken van utility classes.
-                </p>
-                <p>
-                    Daarnaast werd de **extensie over de opdracht** toegelicht, wat meer diepgang gaf aan de finale vereisten van het project.
-                </p>
+        <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+            
+            <div class="mb-8 border-b border-gray-200 pb-3">
+                <h2 class="text-4xl font-extrabold text-gray-900 leading-tight flex items-start">
+                    <span class="mr-3">🏁</span> 
+                    <span class="flex flex-col">
+                        <span>Week 6: Tailwind & De Ommekeer</span>
+                        <span class="text-base text-gray-900 font-medium mt-1">
+                            Lesdatum: 20 okt 2025
+                        </span>
+                    </span>
+                </h2>
             </div>
-        </section>
+            
+            <section class="bg-white p-6 rounded-lg shadow mb-8">
+                <h3 class="text-2xl font-semibold text-gray-800 mb-4 border-b pb-1">
+                    Stress & Verwarring
+                </h3>
+                <div class="space-y-4 text-gray-700 leading-relaxed">
+                    <p>
+                        Ik kwam naar deze les zonder enige voorbereiding en compleet in de war omdat ik er niets van snapte. De les begon met een uitleg over de examenopdracht, een extensie op de opdracht en voorbeelden van ingediende HTML-pagina's van medestudenten.
+                    </p>
+                    <p>
+                        De voorbeelden gaven me veel stress omdat ik op dat moment niet geloofde dat zoiets mij ooit zou lukken. Ik stapte de les buiten met een zwaar gevoel en stress voor dit vak.
+                    </p>
+                </div>
+            </section>
 
-        <section class="bg-white p-6 rounded-lg shadow">
-            <h3 class="text-2xl font-semibold text-gray-800 mb-4 border-b pb-1">
-                Figma Tips & Tricks
-            </h3>
-            <p class="text-gray-700 leading-relaxed">
-                De les werd afgesloten met praktische tips voor Figma, gericht op het stroomlijnen van de workflow:
-            </p>
-            <ul class="list-disc list-inside space-y-2 text-gray-700 mt-4">
-                <li>Snellere prototyping en navigatie.</li>
-                <li>Tips voor het organiseren van grote componentenbibliotheken.</li>
-                <li>Samenwerkingstools en het delen van prototypes.</li>
-            </ul>
-        </section>
+            <section class="bg-white p-6 rounded-lg shadow mb-8">
+                <h3 class="text-2xl font-semibold text-gray-800 mb-4 border-b pb-1">
+                    Tailwind & Figma Tips
+                </h3>
+                <div class="space-y-4 text-gray-700 leading-relaxed">
+                    <p>
+                        De rest van de les bestond uit twee delen:
+                    </p>
+                    <ul class="list-disc list-inside space-y-2 pl-4">
+                        <li>
+                            <strong>Deel 1:</strong> Nog meer uitleg over HTML en het inbrengen van Tailwind CSS. Dit was de opdracht tegen volgende week: Tailwind inbrengen in je huidige HTML-pagina (die ik dus nog niet had).
+                        </li>
+                        <li>
+                            <strong>Deel 2:</strong> Tips en tricks voor een Figma ontwerp.
+                        </li>
+                    </ul>
+                </div>
+            </section>
 
-    </main>
+            <section class="bg-white p-6 rounded-lg shadow">
+                <h3 class="text-2xl font-semibold text-gray-800 mb-4 border-b pb-1">
+                    De Doorbraak & Het Resultaat
+                </h3>
+                <div class="space-y-4 text-gray-700 leading-relaxed">
+                    <p>
+                        Later die week nam ik een besluit: ik focuste me een hele avond volledig op HTML. Met veel hulp van Gemini lukte het me uiteindelijk. Na vele uren en pogingen kreeg ik de verschillende errors weg.
+                    </p>
+                    <p>
+                        Ik moest hiervoor zelfs systeeminstellingen in mijn computer aanpassen, iets wat ik zonder Gemini nooit had geweten. Maar het hielp: ik begon de logica te snappen.
+                    </p>
+                    <p>
+                        Diep in de nacht had ik mijn eerste werkende HTML-pagina! Het bevatte een navigatie voor de verschillende weken, een inlogpagina en een opmerkingsformulier.
+                    </p>
+                    <p>
+                        De dagen erna heb ik de lay-out verfijnd, mijn teksten getypt en mijn afbeeldingen in het ontwerp gezet. Het resultaat is de website die je nu voor je ziet.
+                    </p>
+                </div>
+            </section>
+        </main>
 
-    <footer class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 text-center">
-        <a href="index.html" class="text-sm text-blue-600 hover:text-blue-800 transition duration-200 font-medium">
-            &larr; Terug naar het Overzicht
-        </a>
-    </footer>
+        <footer class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 text-center mt-8">
+            <a href="index.html" class="
+                text-base font-semibold text-blue-600 hover:text-blue-800 
+                bg-white shadow-md px-4 py-2 rounded-full 
+                transition duration-200 
+                inline-block hover:shadow-lg
+            ">
+                &larr; Terug naar het Overzicht
+            </a>
+        </footer>
+
+    </div>
 
 </body>
 <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
