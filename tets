@@ -3,65 +3,112 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Voorpagina – 6 weken project</title>
+    <title>Voorpagina – Lost in Tra(i)nslation</title>
     <link href="./css/output.css" rel="stylesheet">
 </head>
 <body class="min-h-screen bg-cover bg-center" style="background-image: url('assets/achtergrond.jpg');">
 
     <div class="bg-black/50 backdrop-blur-sm min-h-screen flex flex-col">
 
-        <header class="text-white py-10 relative"> 
-            
-            <a href="form_page.html" class="
-                absolute top-0 left-0 m-6 
-                bg-white/90 hover:bg-white text-gray-800 
-                p-2 px-4 rounded-full shadow-lg flex items-center space-x-2 
-                transition duration-300 transform 
-                hover:-translate-y-1 hover:shadow-xl 
-                focus:outline-none focus:ring-4 focus:ring-white/50
-            ">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
-                </svg>
-                <span class="font-medium text-sm hidden sm:inline">Nieuwe Notitie</span>
-            </a>
-            
-            <a href="login_page.html" class="
-                absolute top-0 right-0 m-6 
-                bg-white/90 hover:bg-white text-black 
-                p-2 rounded-full shadow-lg 
-                transition duration-300 transform 
-                hover:-translate-y-1 hover:shadow-xl 
-                focus:outline-none focus:ring-4 focus:ring-white/50
-            ">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0z" />
-                </svg>
-            </a>
-            
-            <div class="text-center">
-                <h1 class="text-4xl font-bold mb-2">Lost in Tra(i)nslation</h1>
-                <p class="text-xl">Overzicht van alle weken</p>
+        <header class="text-white py-6 px-4 sm:py-8 lg:py-10"> 
+            <div class="max-w-7xl mx-auto">
+                
+                <div class="
+                    flex flex-col items-center gap-6 
+                    sm:flex-row sm:justify-between sm:items-start 
+                    relative
+                ">
+                    <a href="form_page.html" class="
+                        bg-white/90 hover:bg-white text-gray-800 
+                        p-2 px-4 rounded-full shadow-lg flex items-center space-x-2 
+                        transition duration-300 transform 
+                        hover:-translate-y-0.5 hover:shadow-xl 
+                        focus:outline-none focus:ring-4 focus:ring-white/50
+                        order-1 sm:order-none sm:absolute sm:top-0 sm:left-0 sm:m-6 mt-0
+                    ">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
+                        </svg>
+                        <span class="font-medium text-sm hidden sm:inline">Nieuwe Notitie</span>
+                    </a>
+
+                    <div class="text-center order-3 sm:order-none sm:mx-auto">
+                        <h1 class="text-4xl sm:text-5xl font-extrabold mb-2">Lost in Tra(i)nslation</h1>
+                        <p class="text-lg sm:text-xl">Documentatie & Overzicht</p>
+                    </div>
+
+                    <a href="login_page.html" class="
+                        bg-white/90 hover:bg-white text-black 
+                        p-2 rounded-full shadow-lg 
+                        transition duration-300 transform 
+                        hover:-translate-y-0.5 hover:shadow-xl 
+                        focus:outline-none focus:ring-4 focus:ring-white/50
+                        order-2 sm:order-none sm:absolute sm:top-0 sm:right-0 sm:m-6 mt-0
+                    ">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0z" />
+                        </svg>
+                    </a>
+                </div>
             </div>
         </header>
-
-        <main class="flex flex-wrap justify-center gap-6 px-6 py-10">
+        <main class="flex flex-col items-center gap-6 px-6 py-10 max-w-4xl mx-auto w-full">
             
-            <a href="week_1.html" class="bg-white/80 hover:bg-white text-black font-semibold py-4 px-6 md:py-6 md:px-10 rounded-lg shadow-lg transition duration-300 transform hover:-translate-y-1 hover:shadow-2xl focus:outline-none focus:ring-4 focus:ring-white/50">Week 1</a>
-            <a href="week_2.html" class="bg-white/80 hover:bg-white text-black font-semibold py-4 px-6 md:py-6 md:px-10 rounded-lg shadow-lg transition duration-300 transform hover:-translate-y-1 hover:shadow-2xl focus:outline-none focus:ring-4 focus:ring-white/50">Week 2</a>
-            <a href="week_3.html" class="bg-white/80 hover:bg-white text-black font-semibold py-4 px-6 md:py-6 md:px-10 rounded-lg shadow-lg transition duration-300 transform hover:-translate-y-1 hover:shadow-2xl focus:outline-none focus:ring-4 focus:ring-white/50">Week 3</a>
-            <a href="week_4.html" class="bg-white/80 hover:bg-white text-black font-semibold py-4 px-6 md:py-6 md:px-10 rounded-lg shadow-lg transition duration-300 transform hover:-translate-y-1 hover:shadow-2xl focus:outline-none focus:ring-4 focus:ring-white/50">Week 4</a>
-            <a href="week_5.html" class="bg-white/80 hover:bg-white text-black font-semibold py-4 px-6 md:py-6 md:px-10 rounded-lg shadow-lg transition duration-300 transform hover:-translate-y-1 hover:shadow-2xl focus:outline-none focus:ring-4 focus:ring-white/50">Week 5</a>
-            <a href="week_6.html" class="bg-white/80 hover:bg-white text-black font-semibold py-4 px-6 md:py-6 md:px-10 rounded-lg shadow-lg transition duration-300 transform hover:-translate-y-1 hover:shadow-2xl focus:outline-none focus:ring-4 focus:ring-white/50">Week 6</a>
-        </main>
+            <div class="flex flex-col md:flex-row gap-6 w-full justify-center">
 
-        <section class="text-center text-white px-6 py-10 max-w-4xl mx-auto">
-            <h2 class="text-2xl font-semibold mb-4">Welkom bij mijn projectdocumentatie</h2>
-            <p class="text-lg">
-                Via de knoppen hierboven kun je navigeren naar elke week van het project. <br>
-                Elke week heeft zijn eigen pagina met documentatie, afbeeldingen en nuttige informatie.
-            </p>
-        </section>
+                <div class="relative w-full md:w-1/2" x-data="{ open: false }">
+                    <button @click="open = !open" type="button" class="
+                        inline-flex justify-between w-full rounded-lg 
+                        shadow-lg px-6 py-4 bg-white/70 text-lg font-bold text-black
+                        hover:bg-white focus:outline-none focus:ring-4 focus:ring-white/50
+                        transition duration-300 transform 
+                        hover:-translate-y-1 hover:shadow-2xl items-center
+                    " aria-expanded="true" aria-haspopup="true">
+                        Bekijk de Weken (1 t/m 6)
+                        <svg class="-mr-1 h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                            <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                        </svg>
+                    </button>
+
+                    <div x-show="open" 
+                          @click.away="open = false"
+                          x-transition:enter="transition ease-out duration-100" 
+                          x-transition:enter-start="transform opacity-0 scale-95" 
+                          x-transition:enter-end="transform opacity-100 scale-100" 
+                          x-transition:leave="transition ease-in duration-75" 
+                          x-transition:leave-start="transform opacity-100 scale-100" 
+                          x-transition:leave-end="transform opacity-0 scale-95" 
+                          class="origin-top-left absolute left-0 mt-2 w-full rounded-md shadow-2xl bg-white/90 ring-1 ring-black ring-opacity-5 focus:outline-none z-10" role="menu" aria-orientation="vertical" tabindex="-1">
+                        <div class="py-1" role="none">
+                            <a href="week_1.html" class="block px-4 py-3 text-sm text-gray-700 hover:bg-gray-100" role="menuitem" tabindex="-1">📅 Week 1: Intro & HTML Basis</a>
+                            <a href="week_2.html" class="block px-4 py-3 text-sm text-gray-700 hover:bg-gray-100" role="menuitem" tabindex="-1">✏️ Week 2: Schetsen & Moodboard</a>
+                            <a href="week_3.html" class="block px-4 py-3 text-sm text-gray-700 hover:bg-gray-100" role="menuitem" tabindex="-1">🎨 Week 3: Kleur & Typografie</a>
+                            <a href="week_4.html" class="block px-4 py-3 text-sm text-gray-700 hover:bg-gray-100" role="menuitem" tabindex="-1">💻 Week 4: Wireframes & Figma</a>
+                            <a href="week_5.html" class="block px-4 py-3 text-sm text-gray-700 hover:bg-gray-100" role="menuitem" tabindex="-1">🌐 Week 5: Code, Git & Errors</a>
+                            <a href="week_6.html" class="block px-4 py-3 text-sm text-gray-700 hover:bg-gray-100" role="menuitem" tabindex="-1">🏁 Week 6: De Ommekeer & Resultaat</a>
+                        </div>
+                    </div>
+                </div>
+
+                <a href="style_guide.html" class="
+                    w-full md:w-1/2 
+                    inline-flex justify-center rounded-lg 
+                    shadow-lg px-6 py-4 bg-white/70 text-lg font-bold text-black focus:outline-none focus:ring-4 focus:ring-white/50
+                    transition duration-300 transform 
+                    hover:-translate-y-1 hover:shadow-2xl items-center
+                ">
+                    Design & Style Guide &rarr;
+                </a>
+            </div>
+            
+            <section class="text-center text-white px-6 py-10 max-w-4xl mx-auto">
+                <h2 class="text-2xl font-semibold mb-4">Welkom bij mijn projectdocumentatie</h2>
+                <p class="text-lg">
+                    Dit portfolio documenteert mijn leertraject van UI/UX Design (Figma) tot de uiteindelijke implementatie met HTML en Tailwind CSS. Gebruik de dropdown hierboven om naar elke week te navigeren.
+                </p>
+            </section>
+
+        </main>
 
         <footer class="text-center text-white/70 py-4 mt-auto">
             <p>&copy; 2025 Lost in Tra(i)nslation Project. Luka Verhaert.</p>
@@ -70,4 +117,5 @@
 
     </div>
 </body>
+<script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 </html>
