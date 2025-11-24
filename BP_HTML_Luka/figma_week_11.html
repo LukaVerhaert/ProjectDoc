@@ -6,7 +6,7 @@
     <title>Figma Week 11 – Mobiele Schermen</title>
     <link href="./css/output.css" rel="stylesheet">
 </head>
-<body class="min-h-screen bg-cover bg-center bg-indigo-50" style="background-image: url('assets/achtergrond.jpg');">
+<body x-data="{ imgModal: null }" @keydown.escape="imgModal = null" class="min-h-screen bg-cover bg-center bg-indigo-50" style="background-image: url('assets/achtergrond.jpg');">
     
     <div class="bg-indigo-50/40 backdrop-blur-md min-h-screen flex flex-col">
         
@@ -32,7 +32,7 @@
                     Mobile First Design 📱
                 </h2>
                 <p class="text-base text-gray-900 mt-1">
-                    De vertaling van de treinschermen naar een mobiele interface.
+                    De vertaling van de treinschermen naar een mobiele interface. Klik op de afbeelding om te vergroten.
                 </p>
             </div>
             
@@ -43,7 +43,7 @@
                         Overzicht: 3 Mobiele Schermen
                     </h3>
                     
-                    <div class="bg-gray-200 flex items-center justify-center rounded-lg overflow-hidden p-4"> 
+                    <div @click="imgModal = 'assets/Figma_mobiel_week_11.jpg'" class="bg-gray-200 flex items-center justify-center rounded-lg overflow-hidden p-4 cursor-zoom-in hover:opacity-90 transition"> 
                         <img src="assets/Figma_mobiel_week_11.jpg" alt="Mobiele schermen in Figma" class="object-contain w-full h-auto max-h-[600px]">
                     </div>
 
@@ -82,5 +82,26 @@
 
     </div>
 
+    <div x-show="imgModal" 
+         x-transition:enter="transition ease-out duration-300"
+         x-transition:enter-start="opacity-0"
+         x-transition:enter-end="opacity-100"
+         x-transition:leave="transition ease-in duration-200"
+         x-transition:leave-start="opacity-100"
+         x-transition:leave-end="opacity-0"
+         @click="imgModal = null"
+         class="fixed inset-0 z-50 flex items-center justify-center bg-black/90 p-4 backdrop-blur-sm"
+         style="display: none;">
+        
+        <button @click="imgModal = null" class="absolute top-5 right-5 text-white hover:text-gray-300 focus:outline-none">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+        </button>
+
+        <img :src="imgModal" class="max-w-full max-h-full rounded shadow-2xl object-contain" @click.stop>
+    </div>
+
 </body>
+<script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 </html>

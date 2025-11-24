@@ -6,7 +6,7 @@
     <title>Figma Mid-Fi Week 4</title>
     <link href="./css/output.css" rel="stylesheet">
 </head>
-<body class="min-h-screen bg-cover bg-center bg-indigo-50" style="background-image: url('assets/achtergrond.jpg');">
+<body x-data="{ imgModal: null }" @keydown.escape="imgModal = null" class="min-h-screen bg-cover bg-center bg-indigo-50" style="background-image: url('assets/achtergrond.jpg');">
     
     <div class="bg-indigo-50/40 backdrop-blur-md min-h-screen">
         
@@ -32,14 +32,14 @@
                     Figma Prototypes
                 </h2>
                 <p class="text-lg text-gray-700 mt-2">
-                    Een diepere blik op de gedigitaliseerde schermen en de stijlkeuzes.
+                    Een diepere blik op de gedigitaliseerde schermen en de stijlkeuzes. Klik op de afbeeldingen om ze te vergroten.
                 </p>
             </div>
             
             <div class="bg-white rounded-2xl shadow-xl overflow-hidden mb-12">
                 <div class="flex flex-col lg:flex-row">
                     
-                    <div class="lg:w-2/3 bg-gray-200 flex items-center justify-center p-6">
+                    <div @click="imgModal = 'assets/figma_2.jpg'" class="lg:w-2/3 bg-gray-200 flex items-center justify-center p-6 cursor-zoom-in hover:opacity-90 transition">
                         <img src="assets/figma_2.jpg" alt="Figma borden" class="object-contain w-full h-auto shadow-md rounded-lg max-h-[600px]">
                     </div>
 
@@ -57,7 +57,7 @@
             <div class="bg-white rounded-2xl shadow-xl overflow-hidden">
                 <div class="flex flex-col lg:flex-row-reverse">
                     
-                    <div class="lg:w-2/3 bg-gray-200 flex items-center justify-center p-6">
+                    <div @click="imgModal = 'assets/figma_2_kleurkeuze.jpg'" class="lg:w-2/3 bg-gray-200 flex items-center justify-center p-6 cursor-zoom-in hover:opacity-90 transition">
                         <img src="assets/figma_2_kleurkeuze.jpg" alt="Figma Kleurkeuze" class="object-contain w-full h-auto shadow-md rounded-lg max-h-[600px]">
                     </div>
 
@@ -87,5 +87,26 @@
 
     </div>
 
+    <div x-show="imgModal" 
+         x-transition:enter="transition ease-out duration-300"
+         x-transition:enter-start="opacity-0"
+         x-transition:enter-end="opacity-100"
+         x-transition:leave="transition ease-in duration-200"
+         x-transition:leave-start="opacity-100"
+         x-transition:leave-end="opacity-0"
+         @click="imgModal = null"
+         class="fixed inset-0 z-50 flex items-center justify-center bg-black/90 p-4 backdrop-blur-sm"
+         style="display: none;">
+        
+        <button @click="imgModal = null" class="absolute top-5 right-5 text-white hover:text-gray-300 focus:outline-none">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+        </button>
+
+        <img :src="imgModal" class="max-w-full max-h-full rounded shadow-2xl object-contain" @click.stop>
+    </div>
+
 </body>
+<script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 </html>
